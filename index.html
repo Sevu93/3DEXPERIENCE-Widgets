@@ -3,18 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
     <head>
         <script>
-            widget.body.innerHTML= "TEST 1";	
-
             require(['DS/CAAWebAppsUserPreference/CAAWebAppsUPMngt'], function (CAAWebAppsUPMngt) {
                 'use strict';
+
                 var MyWidget = {
                     onLoad: function() {
                         var line = CAAWebAppsUPMngt.displayUP(widget.getValue('username'),
                                                             widget.getValue('category'),
                                                             widget.getValue('openfile'),
                                                             widget.getValue('nb_max_item'));
+
+                        widget.body.innerHTML= "TEST 2";	
                     }
                 }
+
+                widget.addEvent('onLoad', MyWidget.onLoadCB);
             })
         </script>
     </head>
