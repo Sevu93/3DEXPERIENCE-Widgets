@@ -6,18 +6,19 @@
             require([
 				'DS/DataDragAndDrop/DataDragAndDrop', 
 				'DS/WAFData/WAFData',
-				'DS/i3DXCompassServices/i3DXCompassServices',
+				'DS/i3DXCompassServices/i3DXCompassServices'
 			],
 
             function(DataDragAndDrop, WAFData, i3DXCompassServices) {
                 'use strict';
 
                 var MyWidget = {
-                    onLoad: function() { widget.body.innerHTML= "LOADED"; }
+                    onLoad: function() { widget.body.innerHTML = "LOADED"; }
                 }
-            })
 
-            widget.addEvent('onLoad', myWidget.onLoad);
+                widget.addEvent('onLoad', myWidget.onLoad);
+
+            });
         </script>
     </head>
     <body>
