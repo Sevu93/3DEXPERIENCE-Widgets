@@ -3,18 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
     <head>
         <script>
-            widget.body.innerHTML= "LOADING";	
+            require([
+				'DS/DataDragAndDrop/DataDragAndDrop', 
+				'DS/WAFData/WAFData',
+				'DS/i3DXCompassServices/i3DXCompassServices',
+			],
 
-            require(['DS/CAAWebAppsUserPreference/CAAWebAppsUPMngt'],
-
-            function(CAAWebAppsUPMngt) {
+            function(DataDragAndDrop, WAFData, i3DXCompassServices) {
                 'use strict';
 
                 var MyWidget = {
                     onLoad: function() { widget.body.innerHTML= "LOADED"; }
                 }
 
-                widget.addEvent('onLoad', MyWidget.onLoadCB);
+                widget.addEvent('onLoad', myWidget.onLoad);
             })
         </script>
     </head>
