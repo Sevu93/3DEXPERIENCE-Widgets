@@ -14,7 +14,10 @@
                 'use strict';
 
                 var MyWidget = {
-                    onLoad: function() { widget.body.innerHTML = "LOADED"; }
+                    onLoad: function() { 
+                        widget.body.innerHTML = "LOADED - EXAMPLE"; 
+                        widget.body.innerHTML += widget.getValue('username');                         
+                    }
                 }
 
                 widget.addEvent('onLoad', MyWidget.onLoad);
