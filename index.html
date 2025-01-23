@@ -13,13 +13,18 @@
             function(DataDragAndDrop, WAFData, i3DXCompassServices) {
                 'use strict';
 
-                var MyWidget = {
+                var WidgetApp = {
                     onLoad: function() { 
-                        widget.body.innerHTML = "LOADED - EXAMPLE";                     
+                        widget.body.innerHTML = "LOADED";                     
+                    },
+
+                    onRefresh: function() {
+                        widget.body.innerHTML = "RELOADED"
                     }
                 }
 
-                widget.addEvent('onLoad', MyWidget.onLoad);
+                widget.addEvent('onLoad', WidgetApp.onLoad);
+                widget.addEvent('onRefresh', WidgetApp.onRefresh);
             });
         </script>
     </head>
