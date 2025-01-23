@@ -73,15 +73,14 @@
                     </div>
                 </div>
                 `
-                widget.body.innerHTML = interfaceHTML;
 
                 var WidgetApp = {
                     onLoad: function() { 
-                        itemName.innerHTML = "LOADED";                     
+                        widget.body.innerHTML = interfaceHTML;                     
                     },
 
                     onRefresh: function() {
-                        itemName.innerHTML = "RELOADED"
+                        widget.body.innerHTML = "RELOADED"
                     }
                 }
 
