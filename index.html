@@ -10,8 +10,46 @@
             <widget:preference type="text" name="UserName" label="Username" defaultValue="-">
         </widget:preferences>
 
+        <style>
+            body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            }
+
+            .styled-input {
+            background-color: #6f42c1;
+            color: #fff;
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+            padding: 10px;
+            outline: none;
+            }
+
+            .styled-input::placeholder {
+            color: #e5d5f3;
+            }
+
+            .styled-input:focus {
+            background-color: #5a34a6;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            #itemName {
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #343a40;
+            }
+        </style>
+
         <title>Widget Demo</title>
-        
+
         <script>
             require([
 				'DS/DataDragAndDrop/DataDragAndDrop', 
@@ -22,13 +60,30 @@
             function(DataDragAndDrop, WAFData, i3DXCompassServices) {
                 'use strict';
 
+                interfaceHTML = `
+                <div class="d-flex vh-100 justify-content-center align-items-center">
+                    <div class="text-center">
+                        <h2 class="mb-4 text-primary">API Tools</h2>
+                    
+                        <!-- Text Input Styled Like a Div -->
+                        <input type="text" id="styledInput" class="styled-input mx-auto" placeholder="Enter HTML here">
+                        <!-- <button id="styledInput" class="styled-input mx-auto">FETCHDATA</button> -->
+
+                        <p id="itemName" class="mt-4">Waiting for input...</p>
+                    </div>
+                </div>
+                `
+                widget.body.innerHTML = interfaceHTML;
+                var itemData = widget.body.querySelector('#styledInput');
+                var itemName = widget.body.querySelector('#itemName');   
+
                 var WidgetApp = {
                     onLoad: function() { 
-                        widget.body.innerHTML = "LOADED";                     
+                        itemName.innerHTML = "LOADED";                     
                     },
 
                     onRefresh: function() {
-                        widget.body.innerHTML = "RELOADED"
+                        itemName.innerHTML = "RELOADED"
                     }
                 }
 
