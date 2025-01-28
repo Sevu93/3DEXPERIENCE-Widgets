@@ -72,14 +72,14 @@
                         var userInterface = "<div class='d-flex vh-100 justify-content-center align-items-center'>"
                             userInterface += "<div class='text-center'>"
                             userInterface += "<h2 class='mb-4 text-primary'>API Tools</h2>"
-                            userInterface += "<input type='text' class='styledInput' class='styled-input mx-auto' placeholder='Enter HTML here'>"
-                            userInterface += "<p class='itemName' class='mt-4'>Waiting for input...</p>"
+                            userInterface += "<input type='text' class='styled-input mx-auto' placeholder='Enter HTML here'>"
+                            userInterface += "<p class='itemName mt-4'>Waiting for input...</p>"
                             userInterface += "</div>"
                             userInterface += "</div>"
 
                         widget.body.innerHTML = userInterface;   
                         
-                        var dataInput = widget.body.querySelector('.styledInput');
+                        var dataInput = widget.body.querySelector('.styled-input');
                         var resultDisplay = widget.body.querySelector('.itemName');
 
                         DataDragAndDrop.droppable( dataInput , {  
@@ -102,7 +102,6 @@
                                     resultDisplay.innerHTML += "<p><strong>Display Name:</strong> " + displayName + "</p>";
                                     resultDisplay.innerHTML += "<p><strong>Display Type:</strong> " + displayType + "</p>";
                                     resultDisplay.innerHTML += "<p><strong>Object ID:</strong> " + objectId + "</p>";
-                                    resultDisplay.innerHTML += "<p><strong>Context ID:</strong> " + contextId + "</p>";
                                     resultDisplay.innerHTML += "</div>";
                                 }
                             }
