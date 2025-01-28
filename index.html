@@ -85,6 +85,21 @@
                         var resultDisplay = widget.body.querySelector('.itemName');
                         var attributeBtn = widget.body.querySelector('.AttributeBtn');
                         var itemData = widget.body.querySelector('.itemData');
+                        
+                        widgetApp.get3DSpaceURL().then(function(serviceUrl) {
+                            console.log(serviceUrl);
+                        },
+
+                        function get3DSpaceURL(){
+                            return new Promise(function(resolve, reject) {
+                                i3DXCompassServices.getServiceUrl({
+                                    serviceName: '3DSpace',
+                                    platformId: widget.getValue('x3dPlatformId'),
+                                    onComplete: resolve,
+                                    onFailure: reject
+                                });
+                            });
+                        };
 
                         attributeBtn.onclick=function () {
                             //var itemID = widget.body.querySelector('objectID');
@@ -93,6 +108,7 @@
 
                             var securityContext = document.getElementById('securityContext');
                             var securityContext = securityContext.innerHTML.split('</strong>')
+                            var securityContext = securityContext.innerHTML.split('ctx::')
                             console.log(itemID[1], securityContext[1]);
 						};
 
