@@ -71,9 +71,11 @@
 
                         var userInterface = "<div class='d-flex vh-100 justify-content-center align-items-center'>"
                             userInterface += "<div class='text-center'>"
-                            userInterface += "<h2 class='mb-4 text-primary'>API Tools</h2>"
+                            userInterface += "<h2 class='mb-4 text-primary'>Widget Demo</h2>"
                             userInterface += "<input type='text' class='styled-input mx-auto' placeholder='Enter HTML here'>"
                             userInterface += "<p class='itemName mt-4'>Waiting for input...</p>"
+                            userInterface += "<button class='AttributeBtn btn btn-primary mt-4'>Load Attributes</button>"
+                            userInterface += "<p class='itemData mt-4'>Waiting for input...</p>"
                             userInterface += "</div>"
                             userInterface += "</div>"
 
@@ -81,11 +83,16 @@
                         
                         var dataInput = widget.body.querySelector('.styled-input');
                         var resultDisplay = widget.body.querySelector('.itemName');
+                        var attributeBtn = widget.body.querySelector('.AttributeBtn');
+                        var itemData = widget.body.querySelector('.itemData');
+
+                        attributeBtn.onclick=function () {
+                            var itemID = widget.body.querySelector('objectID');
+						};
 
                         DataDragAndDrop.droppable( dataInput , {  
 							drop : function(data) {		
                                 var info = JSON.parse(data);
-                                console.log(info);
                                 
                                 if (info.data && info.data.items && info.data.items.length > 0) {
                                     const item = info.data.items[0]; // Get the first item in the array
@@ -101,7 +108,7 @@
                                     resultDisplay.innerHTML += "<h3>Item Details</h3>";
                                     resultDisplay.innerHTML += "<p><strong>Display Name:</strong> " + displayName + "</p>";
                                     resultDisplay.innerHTML += "<p><strong>Display Type:</strong> " + displayType + "</p>";
-                                    resultDisplay.innerHTML += "<p><strong>Object ID:</strong> " + objectId + "</p>";
+                                    resultDisplay.innerHTML += "<p class='objectID'><strong>Object ID:</strong> " + objectId + "</p>";
                                     resultDisplay.innerHTML += "</div>";
                                 }
                             }
