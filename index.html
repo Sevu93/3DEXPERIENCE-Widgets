@@ -84,7 +84,8 @@
 
                         DataDragAndDrop.droppable( dataInput , {  
 							drop : function(data) {		
-                                resultDisplay.innerHTML = "Data Dragged"
+                                var info = JSON.parse(data);
+                                resultDisplay.innerHTML = info;
                             }
                         });
                     },
