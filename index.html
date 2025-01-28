@@ -88,8 +88,9 @@
 
                         attributeBtn.onclick=function () {
                             //var itemID = widget.body.querySelector('objectID');
-                            itemID = document.getElementById('objectID');
-                            console.log(itemID.innerHTML);
+                            var itemID = document.getElementById('objectID');
+                            var itemID = itemID.innerHTML.split("</strong>")[1]?.trim();
+                            console.log(itemID);
 						};
 
                         DataDragAndDrop.droppable( dataInput , {  
