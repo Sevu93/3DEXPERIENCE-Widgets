@@ -90,7 +90,10 @@
                             //var itemID = widget.body.querySelector('objectID');
                             var itemID = document.getElementById('objectID');
                             var itemID = itemID.innerHTML.split('</strong>')
-                            console.log(itemID);
+
+                            var securityContext = document.getElementById('securityContext');
+                            var securityContext = securityContext.innerHTML.split('</strong>')
+                            console.log(itemID[1], securityContext[1]);
 						};
 
                         DataDragAndDrop.droppable( dataInput , {  
@@ -112,6 +115,7 @@
                                     resultDisplay.innerHTML += "<p><strong>Display Name:</strong> " + displayName + "</p>";
                                     resultDisplay.innerHTML += "<p><strong>Display Type:</strong> " + displayType + "</p>";
                                     resultDisplay.innerHTML += "<p id='objectID'><strong>Object ID:</strong> " + objectId + "</p>";
+                                    resultDisplay.innerHTML += "<p id='securityContext'><strong>Security Context:</strong> " + contextId + "</p>";
                                     resultDisplay.innerHTML += "</div>";
                                 }
                             }
