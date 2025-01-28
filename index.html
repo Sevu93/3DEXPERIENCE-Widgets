@@ -63,7 +63,21 @@
 
                 var WidgetApp = {
                     onLoad: function() { 
-                        widget.body.innerHTML = "XDLOADED";                     
+
+                        const userInterface = 
+                        `<div class="d-flex vh-100 justify-content-center align-items-center">
+                            <div class="text-center">
+                                <h2 class="mb-4 text-primary">API Tools</h2>
+                            
+                                <!-- Text Input Styled Like a Div -->
+                                <input type="text" id="styledInput" class="styled-input mx-auto" placeholder="Enter HTML here">
+                                <!-- <button id="styledInput" class="styled-input mx-auto">FETCHDATA</button> -->
+
+                                <p id="itemName" class="mt-4">Waiting for input...</p>
+                            </div>
+                        </div>`
+
+                        widget.body.innerHTML = userInterface;                     
                     },
 
                     onRefresh: function() {
