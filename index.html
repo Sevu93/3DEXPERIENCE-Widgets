@@ -88,7 +88,7 @@
 
                         attributeBtn.onclick=function () {
                             //var itemID = widget.body.querySelector('objectID');
-                            itemID = document.getElementsByClassName('objectID');
+                            itemID = document.getElementById('objectID');
                             console.log(itemID.innerHTML);
 						};
 
@@ -110,7 +110,7 @@
                                     resultDisplay.innerHTML += "<h3>Item Details</h3>";
                                     resultDisplay.innerHTML += "<p><strong>Display Name:</strong> " + displayName + "</p>";
                                     resultDisplay.innerHTML += "<p><strong>Display Type:</strong> " + displayType + "</p>";
-                                    resultDisplay.innerHTML += "<p class='objectID'><strong>Object ID:</strong> " + objectId + "</p>";
+                                    resultDisplay.innerHTML += "<p id='objectID'><strong>Object ID:</strong> " + objectId + "</p>";
                                     resultDisplay.innerHTML += "</div>";
                                 }
                             }
