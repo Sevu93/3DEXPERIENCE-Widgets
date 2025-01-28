@@ -75,7 +75,7 @@
                             userInterface += "<input type='text' class='styled-input mx-auto' placeholder='Enter HTML here'>"
                             userInterface += "<p class='itemName mt-4'>Waiting for input...</p>"
                             userInterface += "<button class='AttributeBtn btn btn-primary mt-4'>Load Attributes</button>"
-                            userInterface += "<p class='itemData mt-4'>Waiting for input...</p>"
+                            userInterface += "<p class='itemData mt-4'></p>"
                             userInterface += "</div>"
                             userInterface += "</div>"
 
@@ -87,7 +87,8 @@
                         var itemData = widget.body.querySelector('.itemData');
 
                         attributeBtn.onclick=function () {
-                            var itemID = widget.body.querySelector('objectID');
+                            //var itemID = widget.body.querySelector('objectID');
+                            itemID = document.getElementsByClassName('objectID');
                             console.log(itemID.innerHTML);
 						};
 
